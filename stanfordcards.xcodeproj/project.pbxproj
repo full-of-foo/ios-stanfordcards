@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA0A2D63197B344800428AE0 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = BA0A2D5C197B344800428AE0 /* Card.m */; };
+		BA0A2D64197B344800428AE0 /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = BA0A2D5E197B344800428AE0 /* Deck.m */; };
+		BA0A2D65197B344800428AE0 /* PlayingCard.m in Sources */ = {isa = PBXBuildFile; fileRef = BA0A2D60197B344800428AE0 /* PlayingCard.m */; };
+		BA0A2D66197B344800428AE0 /* PlayingCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = BA0A2D62197B344800428AE0 /* PlayingCardDeck.m */; };
+		BA34B88F197B39D800BACF20 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA34B88E197B39D800BACF20 /* Images.xcassets */; };
 		BAB76486197B33F600A28A90 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB76485197B33F600A28A90 /* Foundation.framework */; };
 		BAB76488197B33F600A28A90 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB76487197B33F600A28A90 /* CoreGraphics.framework */; };
 		BAB7648A197B33F600A28A90 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB76489197B33F600A28A90 /* UIKit.framework */; };
@@ -15,7 +20,6 @@
 		BAB76496197B33F600A28A90 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB76495197B33F600A28A90 /* AppDelegate.m */; };
 		BAB76499197B33F600A28A90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAB76497197B33F600A28A90 /* Main.storyboard */; };
 		BAB7649C197B33F600A28A90 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB7649B197B33F600A28A90 /* ViewController.m */; };
-		BAB7649E197B33F600A28A90 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAB7649D197B33F600A28A90 /* Images.xcassets */; };
 		BAB764A5197B33F600A28A90 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB764A4197B33F600A28A90 /* XCTest.framework */; };
 		BAB764A6197B33F600A28A90 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB76485197B33F600A28A90 /* Foundation.framework */; };
 		BAB764A7197B33F600A28A90 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB76489197B33F600A28A90 /* UIKit.framework */; };
@@ -34,6 +38,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BA0A2D5B197B344800428AE0 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
+		BA0A2D5C197B344800428AE0 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
+		BA0A2D5D197B344800428AE0 /* Deck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Deck.h; sourceTree = "<group>"; };
+		BA0A2D5E197B344800428AE0 /* Deck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Deck.m; sourceTree = "<group>"; };
+		BA0A2D5F197B344800428AE0 /* PlayingCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayingCard.h; sourceTree = "<group>"; };
+		BA0A2D60197B344800428AE0 /* PlayingCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayingCard.m; sourceTree = "<group>"; };
+		BA0A2D61197B344800428AE0 /* PlayingCardDeck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayingCardDeck.h; sourceTree = "<group>"; };
+		BA0A2D62197B344800428AE0 /* PlayingCardDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayingCardDeck.m; sourceTree = "<group>"; };
+		BA34B88E197B39D800BACF20 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BAB76482197B33F600A28A90 /* stanfordcards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stanfordcards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAB76485197B33F600A28A90 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BAB76487197B33F600A28A90 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -47,7 +60,6 @@
 		BAB76498197B33F600A28A90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BAB7649A197B33F600A28A90 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		BAB7649B197B33F600A28A90 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		BAB7649D197B33F600A28A90 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BAB764A3197B33F600A28A90 /* stanfordcardsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = stanfordcardsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAB764A4197B33F600A28A90 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		BAB764AC197B33F600A28A90 /* stanfordcardsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "stanfordcardsTests-Info.plist"; sourceTree = "<group>"; };
@@ -112,12 +124,18 @@
 		BAB7648B197B33F600A28A90 /* stanfordcards */ = {
 			isa = PBXGroup;
 			children = (
-				BAB76494197B33F600A28A90 /* AppDelegate.h */,
-				BAB76495197B33F600A28A90 /* AppDelegate.m */,
+				BA0A2D5B197B344800428AE0 /* Card.h */,
+				BA0A2D5C197B344800428AE0 /* Card.m */,
+				BA0A2D5D197B344800428AE0 /* Deck.h */,
+				BA0A2D5E197B344800428AE0 /* Deck.m */,
+				BA0A2D5F197B344800428AE0 /* PlayingCard.h */,
+				BA0A2D60197B344800428AE0 /* PlayingCard.m */,
+				BA0A2D61197B344800428AE0 /* PlayingCardDeck.h */,
+				BA0A2D62197B344800428AE0 /* PlayingCardDeck.m */,
+				BA34B88E197B39D800BACF20 /* Images.xcassets */,
 				BAB76497197B33F600A28A90 /* Main.storyboard */,
 				BAB7649A197B33F600A28A90 /* ViewController.h */,
 				BAB7649B197B33F600A28A90 /* ViewController.m */,
-				BAB7649D197B33F600A28A90 /* Images.xcassets */,
 				BAB7648C197B33F600A28A90 /* Supporting Files */,
 			);
 			path = stanfordcards;
@@ -126,6 +144,8 @@
 		BAB7648C197B33F600A28A90 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BAB76494197B33F600A28A90 /* AppDelegate.h */,
+				BAB76495197B33F600A28A90 /* AppDelegate.m */,
 				BAB7648D197B33F600A28A90 /* stanfordcards-Info.plist */,
 				BAB7648E197B33F600A28A90 /* InfoPlist.strings */,
 				BAB76491197B33F600A28A90 /* main.m */,
@@ -228,7 +248,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAB7649E197B33F600A28A90 /* Images.xcassets in Resources */,
+				BA34B88F197B39D800BACF20 /* Images.xcassets in Resources */,
 				BAB76490197B33F600A28A90 /* InfoPlist.strings in Resources */,
 				BAB76499197B33F600A28A90 /* Main.storyboard in Resources */,
 			);
@@ -249,9 +269,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA0A2D65197B344800428AE0 /* PlayingCard.m in Sources */,
+				BA0A2D64197B344800428AE0 /* Deck.m in Sources */,
 				BAB7649C197B33F600A28A90 /* ViewController.m in Sources */,
 				BAB76496197B33F600A28A90 /* AppDelegate.m in Sources */,
+				BA0A2D66197B344800428AE0 /* PlayingCardDeck.m in Sources */,
 				BAB76492197B33F600A28A90 /* main.m in Sources */,
+				BA0A2D63197B344800428AE0 /* Card.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,6 +480,7 @@
 				BAB764B6197B33F600A28A90 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BAB764B7197B33F600A28A90 /* Build configuration list for PBXNativeTarget "stanfordcardsTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +489,7 @@
 				BAB764B9197B33F600A28A90 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
