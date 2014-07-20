@@ -12,6 +12,7 @@
 		BA0A2D65197B344800428AE0 /* PlayingCard.m in Sources */ = {isa = PBXBuildFile; fileRef = BA0A2D60197B344800428AE0 /* PlayingCard.m */; };
 		BA0A2D66197B344800428AE0 /* PlayingCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = BA0A2D62197B344800428AE0 /* PlayingCardDeck.m */; };
 		BA34B88F197B39D800BACF20 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA34B88E197B39D800BACF20 /* Images.xcassets */; };
+		BA34B893197C234F00BACF20 /* CardMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = BA34B892197C234F00BACF20 /* CardMatchingGame.m */; };
 		BAB76486197B33F600A28A90 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB76485197B33F600A28A90 /* Foundation.framework */; };
 		BAB76488197B33F600A28A90 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB76487197B33F600A28A90 /* CoreGraphics.framework */; };
 		BAB7648A197B33F600A28A90 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB76489197B33F600A28A90 /* UIKit.framework */; };
@@ -47,6 +48,8 @@
 		BA0A2D61197B344800428AE0 /* PlayingCardDeck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayingCardDeck.h; sourceTree = "<group>"; };
 		BA0A2D62197B344800428AE0 /* PlayingCardDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayingCardDeck.m; sourceTree = "<group>"; };
 		BA34B88E197B39D800BACF20 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BA34B891197C234F00BACF20 /* CardMatchingGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardMatchingGame.h; path = Model/CardMatchingGame.h; sourceTree = "<group>"; };
+		BA34B892197C234F00BACF20 /* CardMatchingGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardMatchingGame.m; path = Model/CardMatchingGame.m; sourceTree = "<group>"; };
 		BAB76482197B33F600A28A90 /* stanfordcards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stanfordcards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAB76485197B33F600A28A90 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BAB76487197B33F600A28A90 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -91,6 +94,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA34B890197C13FB00BACF20 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BA0A2D5B197B344800428AE0 /* Card.h */,
+				BA0A2D5C197B344800428AE0 /* Card.m */,
+				BA0A2D5D197B344800428AE0 /* Deck.h */,
+				BA0A2D5E197B344800428AE0 /* Deck.m */,
+				BA0A2D5F197B344800428AE0 /* PlayingCard.h */,
+				BA34B891197C234F00BACF20 /* CardMatchingGame.h */,
+				BA34B892197C234F00BACF20 /* CardMatchingGame.m */,
+				BA0A2D60197B344800428AE0 /* PlayingCard.m */,
+				BA0A2D61197B344800428AE0 /* PlayingCardDeck.h */,
+				BA0A2D62197B344800428AE0 /* PlayingCardDeck.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		BAB76479197B33F600A28A90 = {
 			isa = PBXGroup;
 			children = (
@@ -124,14 +144,7 @@
 		BAB7648B197B33F600A28A90 /* stanfordcards */ = {
 			isa = PBXGroup;
 			children = (
-				BA0A2D5B197B344800428AE0 /* Card.h */,
-				BA0A2D5C197B344800428AE0 /* Card.m */,
-				BA0A2D5D197B344800428AE0 /* Deck.h */,
-				BA0A2D5E197B344800428AE0 /* Deck.m */,
-				BA0A2D5F197B344800428AE0 /* PlayingCard.h */,
-				BA0A2D60197B344800428AE0 /* PlayingCard.m */,
-				BA0A2D61197B344800428AE0 /* PlayingCardDeck.h */,
-				BA0A2D62197B344800428AE0 /* PlayingCardDeck.m */,
+				BA34B890197C13FB00BACF20 /* Model */,
 				BA34B88E197B39D800BACF20 /* Images.xcassets */,
 				BAB76497197B33F600A28A90 /* Main.storyboard */,
 				BAB7649A197B33F600A28A90 /* ViewController.h */,
@@ -273,6 +286,7 @@
 				BA0A2D64197B344800428AE0 /* Deck.m in Sources */,
 				BAB7649C197B33F600A28A90 /* ViewController.m in Sources */,
 				BAB76496197B33F600A28A90 /* AppDelegate.m in Sources */,
+				BA34B893197C234F00BACF20 /* CardMatchingGame.m in Sources */,
 				BA0A2D66197B344800428AE0 /* PlayingCardDeck.m in Sources */,
 				BAB76492197B33F600A28A90 /* main.m in Sources */,
 				BA0A2D63197B344800428AE0 /* Card.m in Sources */,
@@ -403,6 +417,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "stanfordcards/stanfordcards-Prefix.pch";
 				INFOPLIST_FILE = "stanfordcards/stanfordcards-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -416,6 +431,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "stanfordcards/stanfordcards-Prefix.pch";
 				INFOPLIST_FILE = "stanfordcards/stanfordcards-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
