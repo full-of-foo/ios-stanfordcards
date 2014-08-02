@@ -61,12 +61,15 @@
 {
     int cardIndex = [self.cardButtons indexOfObject:sender];
     [self.game choseCardAtIndex:cardIndex];
+    
     [self updateUI];
+    if (self.modeSegment.isEnabled) [self.modeSegment setEnabled:false];
 }
 
 - (IBAction)touchResetButton:(UIButton *)sender
 {
     [self resetGame];
+    [self.modeSegment setEnabled:true];
 }
 
 - (IBAction)touchCardModeSegment:(UISegmentedControl *)sender
