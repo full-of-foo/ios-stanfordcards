@@ -11,12 +11,14 @@
 #import "PlayingCardDeck.h"
 #import "PlayingCard.h"
 #import "CardMatchingGame.h"
+#import "MatchingMode.h"
 
 @interface ViewController ()
 
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @property (strong, nonatomic) CardMatchingGame *game;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *modeSegment;
 
 @end
 
@@ -28,14 +30,30 @@
     return [[PlayingCardDeck alloc] init];
 }
 
+- (MatchingMode *)createCurrentMatchingMode
+{
+    
+    NSString *segmentTitle = [self.modeSegment titleForSegmentAtIndex:self.modeSegment.selectedSegmentIndex];
+    int selectedMode = [[segmentTitle substringToIndex:1] intValue];
+    
+    return [[MatchingMode alloc] initWithCardAmount:selectedMode];
+}
+
 - (CardMatchingGame *)game
 {
     int count = [self.cardButtons count];
     Deck *deck = [self createDeck];
     
-    if (!_game) _game = [[CardMatchingGame alloc] initWithCardCount:count
-                                                          usingDeck:deck];
+    if (!_game) _game = [[CardMatchingGame alloc] initWithCardCountAndMode:count
+                                                                 usingDeck:deck
+                                                                 usingMode:[self createCurrentMatchingMode]];
     return _game;
+}
+
+- (void)resetGame
+{
+    self.game = nil;
+    [self updateUI];
 }
 
 
@@ -48,8 +66,13 @@
 
 - (IBAction)touchResetButton:(UIButton *)sender
 {
-    self.game = nil;
-    [self updateUI];
+    [self resetGame];
+}
+
+- (IBAction)touchCardModeSegment:(UISegmentedControl *)sender
+{
+    [self resetGame];
+    NSLog(@"%d", self.game.mode.cardAmount);
 }
 
 - (void)updateUI
