@@ -46,6 +46,12 @@
     [self updateUI];
 }
 
+- (IBAction)touchResetButton:(UIButton *)sender
+{
+    self.game = nil;
+    [self updateUI];
+}
+
 - (void)updateUI
 {
     for (UIButton *cardButton in self.cardButtons) {
