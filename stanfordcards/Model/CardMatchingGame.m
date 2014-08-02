@@ -13,10 +13,12 @@
 
 - (void)matchTwo:(Card *)card;
 - (void)matchThree:(Card *)card;
+- (NSArray *)selectedCards;
 
 @property (nonatomic, readwrite) NSInteger score;
 @property (nonatomic, strong) NSMutableArray *cards; // of Card
 @property (nonatomic, readwrite) MatchingMode *mode;
+@property (nonatomic, readwrite) NSMutableString *status;
 
 @end
 
@@ -27,6 +29,12 @@
 {
     if (!_cards) _cards = [[NSMutableArray alloc] init];
     return _cards;
+}
+
+- (NSMutableString *)status
+{
+    if (!_status) _status = [[NSMutableString alloc] init];
+    return _status;
 }
 
 - (instancetype)initWithCardCountAndMode:(NSUInteger)count
@@ -72,12 +80,14 @@
             int matchScore = [card match:@[otherCard]];
             
             if (matchScore) {
-                self.score += matchScore * self.mode.matchBonus;
+                int points = matchScore * self.mode.matchBonus;
+                self.score += points;
                 card.matched = YES;
                 otherCard.matched = YES;
             } else {
                 self.score -= self.mode.mismatchPenalty;
                 otherCard.chosen = NO;
+                [self.status setString:[NSString stringWithFormat:@"Lost %d points", self.mode.mismatchPenalty]];
             }
             break;
         }
@@ -86,31 +96,47 @@
 
 - (void)matchThree:(Card *)card
 {
-    NSMutableArray *selectedCards = [[NSMutableArray alloc] init];
-    for (Card *otherCard in self.cards){
-        if (otherCard.isChosen && !otherCard.isMatched) [selectedCards addObject:otherCard];
-    }
-    BOOL isLastSelection = ([selectedCards count] == (self.mode.cardAmount - 1));
+    BOOL isLastSelection = ([self.selectedCards count] == (self.mode.cardAmount - 1));
     
     if (isLastSelection) {
-        for (Card *selectedCard in selectedCards) {
-            int matchScore = [card match:selectedCards];
+        for (Card *selectedCard in self.selectedCards) {
+            int matchScore = [card match:self.selectedCards];
             if (matchScore) {
-                self.score += matchScore * self.mode.matchBonus;
+                int points = matchScore * self.mode.matchBonus;
+                self.score += points;
                 card.matched = YES;
                 selectedCard.matched = YES;
+
             } else {
                 self.score -= self.mode.mismatchPenalty;
                 selectedCard.chosen = NO;
+                [self.status setString:[NSString stringWithFormat:@"Lost %d points", self.mode.mismatchPenalty]];
             }
         }
     }
 }
 
+-(NSArray *)selectedCards
+{
+    NSMutableArray *selectedCards = [[NSMutableArray alloc] init];
+    for (Card *otherCard in self.cards){
+        if (otherCard.isChosen && !otherCard.isMatched) [selectedCards addObject:otherCard];
+    }
+    return selectedCards;
+}
+
+
 - (void)choseCardAtIndex:(NSUInteger)index
 {
     Card *card = [self cardAtIndex:index];
+    BOOL isFirstSelection = ([self.selectedCards count] == 0);
     
+    if (isFirstSelection) {
+        [self setStatus:[NSMutableString stringWithFormat:@"Selected %@", card.contents]];
+    } else {
+        [self.status appendString:[NSString stringWithFormat:@", %@", card.contents]];
+    }
+
     if (!card.isMatched) {
         if(card.isChosen){
             card.chosen = NO;

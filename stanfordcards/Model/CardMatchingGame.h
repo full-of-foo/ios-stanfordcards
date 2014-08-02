@@ -21,5 +21,6 @@
 
 @property (nonatomic, readonly) NSInteger score;
 @property (nonatomic, readonly) MatchingMode *mode;
+@property (nonatomic, readonly) NSMutableString *status;
 
 @end

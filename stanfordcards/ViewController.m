@@ -19,6 +19,7 @@
 @property (strong, nonatomic) CardMatchingGame *game;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *modeSegment;
+@property (weak, nonatomic) IBOutlet UITextView *notificationTextView;
 
 @end
 
@@ -60,6 +61,7 @@
 - (IBAction)touchCardButton:(UIButton *)sender
 {
     int cardIndex = [self.cardButtons indexOfObject:sender];
+    [self updateNotificationsTextView];
     [self.game choseCardAtIndex:cardIndex];
     
     [self updateUI];
@@ -75,7 +77,6 @@
 - (IBAction)touchCardModeSegment:(UISegmentedControl *)sender
 {
     [self resetGame];
-    NSLog(@"%d", self.game.mode.cardAmount);
 }
 
 - (void)updateUI
@@ -90,8 +91,15 @@
                               forState:UIControlStateNormal];
         cardButton.enabled = !card.matched;
     }
+    [self updateNotificationsTextView];
     
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.game.score];
+}
+
+- (void) updateNotificationsTextView
+{
+    NSMutableString *notification = [[NSMutableString alloc] init];
+    self.notificationTextView.text = self.game.status;
 }
 
 - (NSString *)titleForCard:(Card *)card
